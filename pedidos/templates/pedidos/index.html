@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'pedidos/style.css' %}">
+
+{% if produtos_list %}
+    <H2>Produtos:</H2>
+    {% for produto in produtos_list %}
+        <ul>
+            <li>{{ produto.nome }}</li>
+            <li>{{ produto.Descrição }}</li>
+            <li><img src="{{ produto.foto.url }}"></li>
+            <li>R${{ produto.valor }}</li>
+            <li><a href="#">Adicionar</a></li>
+        </ul>
+    {% endfor %}
+{% else %}
+    <p>Sem produtos cadastrados.</p>
+{% endif %}

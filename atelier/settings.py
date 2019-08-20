@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['www.zaltron.com.br', 'zaltron.com.br', 'localhost' ]
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
+    'pedidos.apps.PedidosConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
