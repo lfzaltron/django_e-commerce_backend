@@ -5,7 +5,7 @@ from rest_framework import routers
 app_name = 'pedidos'
 
 router = routers.DefaultRouter()
-router.register(r'pedidos', views.PedidosViewSet)
+router.register(r'pedidos', views.PedidosViewSet, 'pedido')
 router.register(r'produtos', views.ProdutosViewSet)
 
 urlpatterns = [

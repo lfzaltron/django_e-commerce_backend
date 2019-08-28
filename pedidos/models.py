@@ -31,7 +31,7 @@ class Pedido(models.Model):
         (5, 'Finalizado'),
     ) # https://stackoverflow.com/questions/12725720/django-choices-how-to-set-default-option
     status = models.IntegerField(null=False, choices=STATUS_PEDIDO, default=0)
-    #cliente = models.ForeignKey('auth.User', related_name='snippets', on_delete=models.CASCADE)
+    cliente = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     # forma de pagamento
     data = models.DateTimeField() # DataHora da CONFIRMAÇÃO do pedido.
 

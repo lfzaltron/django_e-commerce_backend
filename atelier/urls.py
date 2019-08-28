@@ -20,4 +20,6 @@ urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('pedidos/', include('pedidos.urls')),
+    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
