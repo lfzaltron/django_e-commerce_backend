@@ -1,13 +1,13 @@
 from rest_framework import serializers
 from.models import Produto, Pedido
 
-class PedidosSerializer(serializers.HyperlinkedModelSerializer):
+class PedidosSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pedido
-        fields = ['data', 'status']
+        fields = '__all__'
 
 
-class ProdutosSerializer(serializers.HyperlinkedModelSerializer):
+class ProdutosSerializer(serializers.ModelSerializer):
     class Meta:
         model = Produto
-        fields = ['nome', 'Descrição', 'valor', 'indisponivel', 'foto']
+        fields = '__all__'
