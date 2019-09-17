@@ -37,10 +37,11 @@ class ProdutosViewSet(viewsets.ReadOnlyModelViewSet):
 
     serializer_class = ProdutosSerializer
     # Tipos de autenticação suportados. OAuth2 para rest, Session para uso via browser
-    authentication_classes = [OAuth2Authentication, SessionAuthentication]
-    permission_classes = [Or(IsAdminUser, TokenHasReadWriteScope)]
+# Comentei as linhas abaixo pois a lista de produtos não deve exigir autenticação
+#    authentication_classes = [OAuth2Authentication, SessionAuthentication]
+#    permission_classes = [Or(IsAdminUser, TokenHasReadWriteScope)]
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_fields = '__all__'
+    filter_fields = ('nome', 'Descrição')
 
 
 class ItemPedidoViewSet(viewsets.ModelViewSet):
