@@ -47,9 +47,14 @@ class ItemPedido(models.Model):
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
     quantidade = models.IntegerField(default=1)
-    #adicional
+    #adicionais =
     #remover?
     observacao = models.CharField(max_length=200, blank=True)
+
+class Adicional(models.Model):
+    nome = models.CharField(max_length=60)
+    valor = models.DecimalField(max_digits=10, decimal_places=2)
+    #Avaliar a possibilidade de por uma categoria aqui.. aí teria adicionais de panqueca doce, salgada, etc.
 
 
 #Não esquecer dos testes
