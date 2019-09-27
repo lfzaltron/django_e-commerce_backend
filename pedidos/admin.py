@@ -1,14 +1,14 @@
 from django.contrib import admin
 
-from .models import Produto, Pedido, ItemPedido, Categoria
+from .models import Produto, Pedido, ItemPedido, Categoria, Adicional
 
 # Register your models here.
-class ItemPodidoInline(admin.StackedInline):
-    model = ItemPedido
+#class ItemPodidoInline(admin.StackedInline):
+#    model = ItemPedido
 
 
 class PedidosAdmin(admin.ModelAdmin):
-    inlines = [ItemPodidoInline]
+#    inlines = [ItemPodidoInline]
     list_display = ('data', 'quantidade_itens')
 
 
@@ -17,5 +17,7 @@ class ProdutosAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Produto, ProdutosAdmin)
-admin.site.register(Pedido, PedidosAdmin)
+admin.site.register(Pedido)
+admin.site.register(Adicional)
 admin.site.register(Categoria)
+admin.site.register(ItemPedido)
