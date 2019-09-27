@@ -50,11 +50,9 @@ class Pedido(models.Model):
     def __str__(self):
         return str(self.data)
 
-#    def quantidade_itens(self):
-#        que = self.itens.all()
-#        itens = list(que)#ItemPedido.objects.filter(pedido=self)
-#        return len(itens)
-        #return sum(map(lambda x: x.quantidade, self.itens.all()))
+    def quantidade_itens(self):
+        itens = ItemPedido.objects.filter(pedido=self)
+        return sum(map(lambda x: x.quantidade, itens))
 
 
 class ItemPedido(models.Model):
@@ -66,7 +64,9 @@ class ItemPedido(models.Model):
     observacao = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
-        return self.produto.__str__()
+        return 'Pedido ' + self.pedido.__str__() + ' - ' + \
+               self.quantidade.__str__() + ' unidade(s) ' + \
+               self.produto.__str__()
 
 
 
