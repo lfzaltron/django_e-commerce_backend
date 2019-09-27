@@ -60,14 +60,9 @@ class ItemPedido(models.Model):
     pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
     quantidade = models.IntegerField(default=1)
     adicionais = models.ManyToManyField(Adicional, blank=True)
-    #remover?
     observacao = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
         return 'Pedido ' + self.pedido.__str__() + ' - ' + \
                self.quantidade.__str__() + ' unidade(s) ' + \
                self.produto.__str__()
-
-
-
-#Não esquecer dos testes

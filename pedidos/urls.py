@@ -9,6 +9,7 @@ router.register(r'pedidos', views.PedidosViewSet, 'pedido') #quando a view usa o
 router.register(r'produtos', views.ProdutosViewSet, 'produto')
 router.register(r'itens', views.ItemPedidoViewSet)
 router.register(r'categorias', views.CategoriaViewSet)
+router.register(r'adicionais', views.AdicionalViewSet)
 
 urlpatterns = [
     # ex: /pedidos/
