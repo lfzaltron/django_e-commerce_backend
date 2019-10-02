@@ -60,7 +60,7 @@ class ItemPedidoViewSet(viewsets.ModelViewSet):
 class AdicionalViewSet(viewsets.ModelViewSet):
     serializer_class = AdicionalSerializer
     queryset = Adicional.objects.all()
-    authentication_classes = [OAuth2Authentication, SessionAuthentication]
-    permission_classes = [Or(IsAdminUser, TokenHasReadWriteScope)]
+#    authentication_classes = [OAuth2Authentication, SessionAuthentication]
+#    permission_classes = [Or(IsAdminUser, TokenHasReadWriteScope)]
     filter_backends = (filters.DjangoFilterBackend,)
     filter_fields = '__all__'
